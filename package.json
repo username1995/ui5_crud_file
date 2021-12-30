@@ -1,0 +1,44 @@
+{
+    "name": "project001_employee",
+    "version": "0.0.1",
+    "private": true,
+    "description": "A Fiori application.",
+    "keywords": [
+        "ui5",
+        "openui5",
+        "sapui5"
+    ],
+    "main": "webapp/index.html",
+    "scripts": {
+        "start": "fiori run --open 'index.html'",
+        "start-local": "fiori run --config ./ui5-local.yaml --open 'index.html'",
+        "build": "ui5 build -a --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",
+        "deploy": "npm run build && fiori deploy --config ui5-deploy.yaml && rimraf archive.zip",
+        "deploy-config": "fiori add deploy-config",
+        "unit-tests": "fiori run --open test/unit/unitTests.qunit.html",
+        "start-mock": "fiori run --open test/mockServer.html",
+        "int-tests": "fiori run --open test/integration/opaTests.qunit.html",
+        "undeploy": "fiori undeploy --config ui5-deploy.yaml",
+        "proxy": "node proxy.js"
+    },
+    "devDependencies": {
+        "@sap/ux-ui5-tooling": "1",
+        "@types/openui5": "^1.40.1",
+        "@ui5/cli": "2.7.1",
+        "@ui5/fs": "2.0.1",
+        "@ui5/logger": "2.0.0",
+        "rimraf": "3.0.2",
+        "cors-anywhere": "^0.4.1"
+    },
+    "ui5": {
+        "dependencies": [
+            "@sap/ux-ui5-tooling"
+        ],
+        "libs": {
+            "sap.ui.unified": {}
+        }
+    },
+    "dependencies": {
+        "corsproxy": "1.5.0"
+    }
+}

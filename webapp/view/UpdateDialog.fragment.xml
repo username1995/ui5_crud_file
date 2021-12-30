@@ -1,0 +1,22 @@
+<core:FragmentDefinition id="idBookUpdateFragment"
+                         controllerName="project001employee.controller.BookList"
+                         xmlns="sap.m"
+                         xmlns:f="sap.ui.layout.form"
+                         xmlns:core="sap.ui.core">
+    <Dialog id="idBookUpdateDialog">
+        <f:SimpleForm id="idBookUpdateForm" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+                      title="{i18n>updateBook}"
+                      class="editableForm">
+            <f:content>
+                <core:Title text="{i18n>bookInformation}"/>
+                <Label text="{i18n>isbn}"/>
+               <!---<Input enabled="false" id="isbnInput" value="{/Id}" placeholder="ISBN"/> -->               <Label text="{i18n>totalNumber}"/>
+                <Input id="totalNumberInput" value="{/Name}" placeholder="Total number"/>
+                <Label text="{i18n>availableNumber}"/>
+                <Input id="availableNumberInput" value="{/Age}" placeholder="Available number"/>
+                <Button text="{i18n>update}" type="Accept" press="handleUpdate"/>
+                <Button text="{i18n>cancel}" type="Reject" press="handleCancelUpdate"/>
+            </f:content>
+        </f:SimpleForm>
+    </Dialog>
+</core:FragmentDefinition>

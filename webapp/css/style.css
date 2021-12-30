@@ -1,0 +1,26 @@
+/* Enter your custom styles here */
+/*uploadSet: align toolbar checkbox with ListItems' checkboxes*/
+.sapMIBar.sapMTB.sapMTBNewFlex.sapMTBInactive.sapMTBStandard.sapMTB-Transparent-CTX {
+    padding-left: 2px;
+}
+/*uploadSet: reduce height of each uploadItem*/
+.sapMLIB.sapMLIB-CTX.sapMLIBShowSeparator.sapMLIBTypeInactive.sapMLIBFocusable.sapMCLI.sapMUCItem {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+/*uploadSet: align uploadItem checkboxes to center*/
+.sapMCb.sapMLIBSelectM {
+    align-self: center !important;
+}
+/*uploadSet: remove rename icon from pending files*/
+.sapMBtnBase.sapMBtn.sapMUCEditBtn.sapMUCFirstButton {
+    display: none;
+}
+/*uploadSet: remove pending bar and text*/
+.sapMFlexBox.sapMVBox.sapMFlexBoxJustifyStart.sapMFlexBoxAlignItemsStretch.sapMFlexBoxWrapNoWrap.sapMFlexBoxAlignContentStretch.sapMFlexBoxBGTransparent.sapMUSProgressBox {
+    display: none;
+}
+/*uploadSet: center the x button for pending files*/
+.sapMUCButtonContainer {
+    align-self: center;
+}g6

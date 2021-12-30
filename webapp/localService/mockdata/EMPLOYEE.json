@@ -1,0 +1,14 @@
+{
+  "EMPLOYEESet" : [
+    
+     {  "Id" : "35",
+        "Name" : "DUPA",
+        "Age" : "26"
+      },
+      {
+        "Id" : "36",
+        "Name" : "DUPA",
+        "Age" : "12"
+      }
+]
+}

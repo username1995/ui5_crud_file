@@ -1,0 +1,34 @@
+<core:FragmentDefinition id="idFileAddFragment"
+        controllerName="project001employee.controller.BookList"
+        xmlns="sap.m"
+        xmlns:f="sap.ui.layout.form"
+        xmlns:core="sap.ui.core"        
+        xmlns:mvc="sap.ui.core.mvc"
+		xmlns:upload="sap.m.upload"
+
+		>
+        
+    <Dialog id="idfIleAddDialog">
+
+
+<upload:UploadSet id="UploadSet" instantUpload="false" noDataDescription="" noDataText=""
+ selectionChanged="onSelectionChangeAttachment"
+uploadCompleted="onUploadCompleted" uploadUrl="/sap/opu/odata/sap/ZEMPLOYEES_SRV/PDFSET" visible="true"
+beforeUploadStarts="onBeforeUploadStarts"
+fileTypes="pdf,doc,docx,docm,ppt,pptx,xls,xlsx,jpg,jpeg,png"
+fileTypeMismatch="onFileTypeMismatch"
+maxFileSize="2"
+fileSizeExceeded="onFileSizeExceeded">
+    <upload:toolbar>
+        <OverflowToolbar>
+            <CheckBox id="checkbox" select="onSelectAllAttachments" visible="false" />
+            <ToolbarSpacer/>
+            <Button id="upload" enabled="true" text="Upload" press="onStartUpload" type="Transparent" visible="true" />
+            <Button id="remove" enabled="false" icon="sap-icon://delete" press="onRemove" type="Transparent" visible="true" />
+            <Button id="download" enabled="false" icon="sap-icon://download" press="onDownload" type="Transparent" visible="true" />
+        </OverflowToolbar>
+    </upload:toolbar>
+</upload:UploadSet>
+
+ </Dialog>
+</core:FragmentDefinition>

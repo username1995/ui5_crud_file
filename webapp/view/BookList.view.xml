@@ -1,0 +1,95 @@
+<mvc:View
+        controllerName="project001employee.controller.BookList"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:core="sap.ui.core"
+        xmlns="sap.m">
+<core:Fragment id="idFileAddFragment" fragmentName="project001employee.view.AddFile" type="XML" />
+       <!-- <SearchField  search="handleLiveChange"/>
+        <Table id="tableId" inset="false" items="{/animals}">
+            <columns>
+                <Column width="12em">
+                    <ObjectIdentifier text="Name"/>
+                </Column>
+                <Column>
+                    <Text text="Favourite Food"/>
+                </Column>
+                <Column>
+                    <Text text="Color"/>
+                </Column>
+                <Column>
+                    <ObjectNumber number="Number of Legs"/>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <ObjectIdentifier title="{name}"/>
+                        <Text text="{favouriteFood}"/>
+                        <Text text="{color}"/>
+                        <ObjectNumber
+                          number="{numberOfLegs}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>-->
+
+
+    <Table id="idBooksTable"
+           items="{
+			path: '/EMPLOYEESet',
+            parameters: {
+                $count: true
+            },
+			sorter: {
+				path: 'Id'
+			}
+		}"
+		   
+           mode="SingleSelectLeft"
+           growing="true"
+           growingThreshold="10"
+           >
+        <headerToolbar>
+            <Toolbar>
+                <Button icon="sap-icon://add" text="Add new book" press="onAdd"/>
+                <Button icon="sap-icon://add" text="Add new file" press="onAddFile"/>
+                <Button icon="sap-icon://edit" text="Update book" press="onUpdate"/>
+                <ToolbarSpacer/>
+                <SearchField id="searchField" width="50%" search=".onFilterBooks"/>
+                <Button icon="sap-icon://excel-attachment" press="onExport"/>
+                <Button text="Show PDF Viewer" icon="sap-icon://process" press="showPDF"/>
+                <Button icon="sap-icon://delete" text="Delete book" press="onDelete"/>
+            </Toolbar>
+        </headerToolbar>
+
+        <columns>
+            <Column>
+                <Text text="{i18n>totBooks}"/>
+            </Column>
+
+            <Column>
+                <Text text="{i18n>avBooks}"/>
+            </Column>
+            <Column>
+                <Text text="{i18n>totBooks}"/>
+            </Column>
+     
+
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <ObjectIdentifier
+                            title="{Id}"/>
+                            <!--text="{Id}"--> 
+         
+      
+                    <Text text="{= parseInt(${Age}) }"/> 
+                    <Text text="{Name}"/>
+                   
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+
+</mvc:View>

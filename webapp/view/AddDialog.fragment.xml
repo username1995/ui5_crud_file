@@ -1,0 +1,32 @@
+<core:FragmentDefinition id="idBookAddFragment"
+        controllerName="project001employee.controller.BookList"
+        xmlns="sap.m"
+        xmlns:f="sap.ui.layout.form"
+        xmlns:core="sap.ui.core">
+    <Dialog id="idBookAddDialog">
+        <f:SimpleForm id="idBookAddForm" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+                      title="{i18n>addBook}"
+                      class="editableForm">
+            <f:content>
+                <core:Title text="{i18n>bookInformation}"/>
+                <Label text="{i18n>isbn}"/>
+                <Input id="isbnInput" value="{/Id}" placeholder="Id" visible= "false"/>
+                <Label text="{i18n>author}"/>
+                <Input 
+                id="authorInput" value="{/Name}" placeholder="Name"  
+                showValueHelp="true"
+                valueHelpRequest=".onValueHelpRequest" 
+                valueHelpOnly="true"
+            >
+                <core:Item key="{Name}" text="{Name} ({Name})" />
+            </Input>
+                
+                <Label text="{i18n>title}"/>
+                <Input id="titleInput" value="{/Age}" placeholder="Age"/>
+
+                <Button text="{i18n>add}" type="Accept" press="handleSave"/>
+                <Button text="{i18n>cancel}" type="Reject" press="handleCancel"/>
+            </f:content>
+        </f:SimpleForm>
+    </Dialog>
+</core:FragmentDefinition>
